@@ -1,10 +1,22 @@
 export interface AgentConfig {
   name: string;
   description: string;
-  tools: string[];
-  model: string;
-  temperature?: number;
-  maxTokens?: number;
+  image?: Buffer | string; // Buffer for file data, string for file path
+  imageUrl?: string; // URL of the uploaded image
+  userId?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  coreCapabilities?: string;
+  interactionStyle?: string;
+  analysisApproach?: string;
+  riskCommunication?: string;
+  responseFormat?: string;
+  limitationsDisclaimers?: string;
+  prohibitedBehaviors?: string;
+  knowledgeUpdates?: string;
+  styleGuide?: string;
+  specialInstructions?: string;
+  responsePriorityOrder?: string;
 }
 
 export interface Agent {
@@ -19,13 +31,15 @@ export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;
   toolInvocations?: ToolInvocation[];
+  messageId?: string;
 }
 
 export interface ToolInvocation {
-  tool: string;
+  toolName: string;
   input: Record<string, any>;
   output?: any;
   error?: string;
+  toolCallId?: string;
 }
 
 export interface ChatResponse {
