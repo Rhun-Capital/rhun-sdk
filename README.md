@@ -31,7 +31,7 @@ If you want to build the SDK from source:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rhun-ai/rhun-sdk.git
+git clone https://github.com/Rhun-Capital/rhun-sdk.git
 cd rhun-sdk
 ```
 
